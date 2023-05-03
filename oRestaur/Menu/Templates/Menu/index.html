@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<title>EMMER & RYE</title>
+
+<h1 class="text-overlay" style = "font-family: 'Brush Script MT', cursive" align="center">Sides</h1>
+<div class="row" mt-4>
+    {% for i in B %}
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="{{B.cover_url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ B.title }}</h5>
+                    <p class="card-text">{{B.description}}</p>
+                    <p class="card-text">Price:${{B.price}}</p>
+                    <form class="form-inline" action="cart_add_item/" method="post">
+                        <button class="btn btn-primary" type="submit" name="book_id" value="{{ B.id }}">Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<h1 class="text-overlay" style = "font-family: 'Brush Script MT', cursive" align="center">Appetizers</h1>
+<div class="row" mt-4>
+    {% for i in C %}
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="{{C.cover_url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ C.title }}</h5>
+                    <p class="card-text">{{C.description}}</p>
+                    <p class="card-text">Price:${{C.price}}</p>
+                    <form class="form-inline" action="cart_add_item/" method="post">
+                        <button class="btn btn-primary" type="submit" name="book_id" value="{{ C.id }}">Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<h1 class="text-overlay" style = "font-family: 'Brush Script MT', cursive" align="center">Main Course</h1>
+<div class="row" mt-4>
+    {% for i in D %}
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="{{D.cover_url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ D.title }}</h5>
+                    <p class="card-text">{{D.description}}</p>
+                    <p class="card-text">Price:${{D.price}}</p>
+                    <form class="form-inline" action="cart_add_item/" method="post">
+                        <button class="btn btn-primary" type="submit" name="book_id" value="{{ D.id }}">Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<h1 class="text-overlay" style = "font-family: 'Brush Script MT', cursive" align="center">Dessert</h1>
+<div class="row" mt-4>
+    {% for i in E %}
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="{{E.cover_url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ E.title }}</h5>
+                    <p class="card-text">{{E.description}}</p>
+                    <p class="card-text">Price:${{E.price}}</p>
+                    <form class="form-inline" action="cart_add_item/" method="post">
+                        <button class="btn btn-primary" type="submit" name="book_id" value="{{ E.id }}">Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
