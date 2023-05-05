@@ -8,16 +8,17 @@
 
 <h1 class="text-overlay" style = "font-family: 'Brush Script MT', cursive" align="center">Sides</h1>
 <div class="row" mt-4>
-    {% for i in B %}
+    {% for i in elements.B.sides %}
+        <!--It is accessing the nested dictionary from elements which is in B, more specifically the key sides-->
         <div class="col">
             <div class="card" style="width: 18rem;">
-                <img src="{{B.cover_url}}" class="card-img-top" alt="...">
+                <img src="{{i.cover_url}}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">{{ B.title }}</h5>
-                    <p class="card-text">{{B.description}}</p>
-                    <p class="card-text">Price:${{B.price}}</p>
+                    <h5 class="card-title">{{ i.title }}</h5>
+                    <p class="card-text">{{i.description}}</p>
+                    <p class="card-text">Price:${{i.price}}</p>
                     <form class="form-inline" action="cart_add_item/" method="post">
-                        <button class="btn btn-primary" type="submit" name="book_id" value="{{ B.id }}">Add to Cart</button>
+                        <button class="btn btn-primary" type="submit" name="book_id" value="{{ i.id }}">Add to Cart</button>
                     </form>
                 </div>
             </div>

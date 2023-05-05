@@ -15,6 +15,6 @@ def menu_view(request):
         "E" : dessert
     }
 
-    return render(request, 'Menu/index.html/',elements)
+    return render(request, 'Menu/index.html/', {"elements": elements})
 
 
